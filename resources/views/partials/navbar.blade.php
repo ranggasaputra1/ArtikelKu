@@ -68,17 +68,25 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li>
-                    <a href="#hero">Beranda<br /></a>
+                    <a href="/#beranda"
+                        class="nav-link {{ Request::is('/#beranda') ? 'active' : '' }}">Beranda<br /></a>
                 </li>
-                <li><a href="#tentang-kami">Tentang Kami</a></li>
-                <li><a href="#fitur">Fitur</a></li>
-                <li><a href="#artikel-terbaru">Postingan Terbaru</a></li>
-                <li><a href="{{ 'posts' }}">Artikel</a></li>
+                <li><a href="/about#tentang-kami"
+                        class="nav-link {{ Request::is('/about#tentang-kami') ? 'active' : '' }}">Tentang
+                        Kami</a></li>
+                <li><a href="/fitur#fitur" class="nav-link {{ Request::is('/fitur#fitur') ? 'active' : '' }}">Fitur</a>
+                </li>
+                <li><a href="/posts" class="nav-link {{ Request::is('/posts#posts') ? 'active' : '' }}">Artikel
+                        Terbaru</a>
+                </li>
+                <li><a href="/categories"
+                        class="nav-link {{ Request::is('/categories#categories') ? 'active' : '' }}">Kategori</a>
+                </li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted flex-md-shrink-0" href="{{ '/#fitur' }}">Mulai Menulis</a>
+        <a class="btn-getstarted flex-md-shrink-0" href="/login">Mulai Menulis</a>
     </div>
 
 

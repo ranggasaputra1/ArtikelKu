@@ -26,7 +26,7 @@ use App\Http\Controllers\GoogleController;
 // Route Halaman Home
 Route::get('/', function () {
     return view('home', [
-        "tittle"=> "Home",
+        "tittle"=> "Beranda",
     ]);
 });
 
@@ -34,13 +34,19 @@ Route::get('/', function () {
 Route::get('/about',function(){
     return view('about', 
     [
-        "tittle"=> "About",
-        "name"=>"Rangga Saputra",
-        "email"=>"ranggasaputra@gmail.com",
-        "image"=>"1.png",
-        "alt"=>"profile",
+        "tittle"=> "Tentang Kami"
     ]);
 });
+
+// Route Halaman Fitur
+Route::get('/fitur',function(){
+    return view('fitur', 
+    [
+        "tittle"=> "Fitur"
+    ]);
+});
+
+
 
 // Route Halaman Posts
 Route::get('/posts', [PostController::class , 'index']);

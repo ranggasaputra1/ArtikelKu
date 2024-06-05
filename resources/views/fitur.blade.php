@@ -1,7 +1,7 @@
-@extends('layouts/main')
+@extends('layouts.main')
 
 @section('container')
-    {{-- Body --}}
+    {{-- Body About --}}
 
     <body class="index-page">
         <main class="main">
@@ -183,7 +183,6 @@
                 </div>
             </section>
             <!-- /Features Section -->
-
 
 
         </main> <br><br>

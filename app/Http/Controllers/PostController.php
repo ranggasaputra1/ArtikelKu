@@ -21,6 +21,7 @@ class PostController extends Controller
 
         return view ('posts', [
             "tittle"=> "Posts " . $tittle,
+            "header"=> "Seluruh Artikel ",
             // Menampilkan semua data dari database
             // "posts"=> Post::all()
             // Menampilkan data berdasarkan postingan terbaru
