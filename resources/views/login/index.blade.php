@@ -123,5 +123,7 @@
         {{-- login With Google --}}
 
         <script src="https://accounts.google.com/gsi/client" async></script>
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
     </div>
 @endsection
