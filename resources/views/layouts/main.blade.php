@@ -5,13 +5,14 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>ArtikelKu | {{ $tittle }}</title>
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
+
 
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
-
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
+    {{-- End Favicon --}}
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />

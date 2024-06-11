@@ -59,7 +59,7 @@
 
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <a href="/" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="assets/img/artikelku.png" alt="artikelku" />
             <h1 class="sitename">ArtikelKu</h1>
@@ -68,19 +68,20 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li>
-                    <a href="/#beranda"
-                        class="nav-link {{ Request::is('/#beranda') ? 'active' : '' }}">Beranda<br /></a>
+                    <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">Beranda<br /></a>
                 </li>
-                <li><a href="/about#tentang-kami"
-                        class="nav-link {{ Request::is('/about#tentang-kami') ? 'active' : '' }}">Tentang
-                        Kami</a></li>
-                <li><a href="/fitur#fitur" class="nav-link {{ Request::is('/fitur#fitur') ? 'active' : '' }}">Fitur</a>
+                <li>
+                    <a href="/about#tentang-kami" class="nav-link {{ Request::is('about') ? 'active' : '' }}">Tentang
+                        Kami</a>
                 </li>
-                <li><a href="/posts" class="nav-link {{ Request::is('/posts#posts') ? 'active' : '' }}">Artikel
-                        Terbaru</a>
+                <li>
+                    <a href="/fitur#fitur" class="nav-link {{ Request::is('fitur') ? 'active' : '' }}">Fitur</a>
                 </li>
-                <li><a href="/categories"
-                        class="nav-link {{ Request::is('/categories#categories') ? 'active' : '' }}">Kategori</a>
+                <li>
+                    <a href="/posts" class="nav-link {{ Request::is('posts') ? 'active' : '' }}">Artikel Terbaru</a>
+                </li>
+                <li>
+                    <a href="/categories" class="nav-link {{ Request::is('categories') ? 'active' : '' }}">Kategori</a>
                 </li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -90,9 +91,8 @@
             <center>Tulis Artikel</center>
         </a>
     </div>
-
-
 </header>
+
 
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>

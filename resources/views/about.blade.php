@@ -207,16 +207,12 @@
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4>Tautan</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/">Beranda</a></li>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">About us</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/about#tentang-kami">Tentang Kami</a>
                             </li>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pelayanan Kami</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/fitur#fitur">Fitur</a>
                             </li>
                         </ul>
                     </div>
@@ -225,18 +221,18 @@
                         <h4>Pelayanan Kami</h4>
                         <ul>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Web Design</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/">Membuat Artikel</a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="#">Web Development</a>
+                                <a href="/">Platfrom untuk menulis di internet</a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="#">Product Management</a>
+                                <a href="/">Menambah literasi</a>
                             </li>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Marketing</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/">Mendapatkan Ide-Ide Baru</a>
                             </li>
                         </ul>
                     </div>
@@ -248,10 +244,10 @@
                             Berita Terbaru seputar ArtikelKu akan selalu di Share di Social Media Berikut
                         </p>
                         <div class="social-links d-flex">
-                            <a href=""><i class="bi bi-twitter-x"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -259,11 +255,10 @@
 
             <div class="container copyright text-center mt-4">
                 <p>
-                    © <span>Copyright</span>
                     <strong class="px-1 sitename">ArtikelKu</strong>
                 </p>
                 <div class="credits">
-                    Dirancang oleh <a href="">Kelompok</a>
+                    Dirancang oleh <a href="#">Kelompok</a>
                 </div>
             </div>
         </footer>
