@@ -45,7 +45,7 @@
                                     edukatif, menarik, dan Efisien.
                                 </p>
                                 <div class="text-center text-lg-start">
-                                    <a href="#"
+                                    <a href="/posts"
                                         class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span>Lihat Artikel</span>
                                         <i class="bi bi-arrow-right"></i>
