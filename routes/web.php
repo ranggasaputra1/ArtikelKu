@@ -1,16 +1,17 @@
 <?php
 
 
+use App\Models\User;
+
+
 use App\Models\Category;
-
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\DashboardPostController;
 
 
 /*
@@ -57,7 +58,7 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 // Route Mendapatkan halaman categories
 Route::get('/categories', function(){
     return view ('categories',[
-        "tittle" => "Categories",
+        "tittle" => "Kategori",
         "categories" => Category::all(),
     ]);
 });

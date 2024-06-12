@@ -37,7 +37,7 @@ class Post extends Model
         // Fungsi search dari halaman post masuk ke halaman author dan join ke tabel author menggunakan arrow function
         $query->when($filters['author'] ?? false, fn($query, $author)=>
             $query->whereHas('author', fn($query) =>
-                $query->where('username', $author)
+                $query->where('name', $author)
             )
         );
 }

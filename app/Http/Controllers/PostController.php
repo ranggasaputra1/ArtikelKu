@@ -1,39 +1,51 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Post;
-use App\Models\Category;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function index(){    
+    public function index()
+    {    
         $tittle = '';
-        if(request('category')){
-            $category = Category::firstWhere('slug', request('category'));
-            $tittle = 'in '. $category->name;
-        }
-        if(request('author')){
-            $author = User::firstWhere('username', request('author'));
-            $tittle = 'by: '. $author->name;
+        $authorName = request('author');
+        $categoryName = request('category');
+
+        $postsQuery = Post::latest()->filter(request(['search', 'category', 'author']));
+
+        if ($categoryName) {
+            $category = Category::firstWhere('slug', $categoryName);
+            $tittle = 'in ' . $category->name;
+            $categoryPostCount = $postsQuery->count();
+        } else {
+            $categoryPostCount = null;
         }
 
-        return view ('posts', [
-            "tittle"=> "Posts " . $tittle,
-            "header"=> "Seluruh Artikel ",
-            // Menampilkan semua data dari database
-            // "posts"=> Post::all()
-            // Menampilkan data berdasarkan postingan terbaru
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString()
+        if ($authorName) {
+            $author = User::firstWhere('name', $authorName);
+            $tittle = 'by: ' . $author->name;
+            $postCount = $postsQuery->count();
+        } else {
+            $postCount = null;
+        }
+
+        return view('posts', [
+            "tittle" => "Artikel " . $tittle,
+            "header" => "Seluruh Artikel ",
+            'posts' => $postsQuery->paginate(7)->withQueryString(),
+            'postCount' => $postCount,
+            'categoryPostCount' => $categoryPostCount,
         ]);
     }
-    public function show(Post $post){
-        
+
+    public function show(Post $post)
+    {
         return view('post', [
-            "tittle"=>"Single Post",
-            "active"=> "posts",
-            "post"=> $post
+            "tittle" => "Single Post",
+            "active" => "posts",
+            "post" => $post
         ]);
     }
 }
