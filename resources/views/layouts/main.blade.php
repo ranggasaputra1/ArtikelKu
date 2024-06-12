@@ -28,6 +28,9 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
+    {{-- AOS --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 </head>
@@ -53,6 +56,9 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    {{-- AOS --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 
 </html>

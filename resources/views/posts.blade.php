@@ -1,10 +1,13 @@
 @extends('layouts.main')
 
 @section('container')
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
     <br><br><br><br><br>
-    <div class="container mt-8">
-        <h1 class="mb-3 text-center">{{ $header }}</h1>
-        <center>
+    <div class="container mt-8" data-aos="fade-up" data-aos-duration="700">
+        <h1 class="mb-3 text-center" data-aos="fade-down" data-aos-duration="700">{{ $header }}</h1>
+        <center data-aos="zoom-in" data-aos-duration="700">
             @if (request('author'))
                 <small>
                     <p>{{ $posts->count() ? $posts[0]->author->name . ' Menulis ' . $postCount . ' Artikel' : 'Tidak ada postingan oleh penulis terkait' }}
@@ -19,7 +22,7 @@
             @endif
         </center>
 
-        <div class="row justify-content-center mb-3">
+        <div class="row justify-content-center mb-3" data-aos="fade-right" data-aos-duration="700">
             <div class="col-md-6">
                 <form action="/posts">
                     @if (request('category'))
@@ -40,7 +43,7 @@
 
         {{-- Kondisi untuk menampilkan Hero --}}
         @if ($posts->count())
-            <div class="card mb-4">
+            <div class="card mb-4" data-aos="flip-left" data-aos-duration="700">
                 {{-- Dibawah ini adalah kondisi ketika gambar ada diisi oleh user dan jika tidak ada --}}
                 @if ($posts[0]->image)
                     <div style="max-height: 400px; overflow:hidden">
@@ -75,7 +78,8 @@
             <div class="col">
                 <div class="row">
                     @foreach ($posts->skip(1) as $post)
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="700"
+                            data-aos-delay="{{ $loop->index * 100 }}">
                             <div class="card">
                                 <div class="position-absolute px-3 py-2 text-white"
                                     style="background-color: rgba(0, 0, 0, 0.7)"><a
@@ -112,11 +116,17 @@
             </div>
             {{-- End Foreach Untuk Card --}}
         @else
-            <p class="text-center fs-4">Tidak ada postingan dengan Artikel Terkait</p>
+            <p class="text-center fs-4" data-aos="fade-in" data-aos-duration="700">Tidak ada postingan dengan Artikel
+                Terkait</p>
         @endif
     </div>
 
     {{ $posts->links() }}
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+    </script>
 @endsection
