@@ -55,7 +55,7 @@
                             @enderror
                         </div>
 
-                        <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Register</button>
+                        <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Daftar</button>
                     </form>
                     <small class="d-block text-center mt-3"> Sudah Punya Akun? <a href="/login"> Login
                             Sekarang!</a></small>

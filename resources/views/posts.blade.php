@@ -33,7 +33,7 @@
                         <input type="hidden" name="author" value="{{ request('author') }}">
                     @endif
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cari..." name="search"
+                        <input type="text" class="form-control" placeholder="Cari Artikel..." name="search"
                             value="{{ request('search') }}">
                         <button class="btn btn-outline-primary" type="submit">Cari</button>
                     </div>

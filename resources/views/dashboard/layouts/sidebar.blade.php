@@ -23,7 +23,7 @@
                             <a class="nav-link d-flex align-items-center gap-2 active" href="/dashboard/posts"
                                 style="color: black">
                                 <span data-feather="file-text" style="color:black"></span>
-                                My Posts
+                                ArtikelKu
                             </a>
                         </li>
                     </ul>

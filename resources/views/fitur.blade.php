@@ -259,7 +259,8 @@
                     <strong class="px-1 sitename">ArtikelKu</strong>
                 </p>
                 <div class="credits">
-                    Dirancang oleh <a href="#">Kelompok</a>
+                    Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> oleh <a href="#">Kelompok Rangga
+                        Saputra</a>
                 </div>
             </div>
         </footer>
