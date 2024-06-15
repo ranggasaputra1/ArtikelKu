@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -23,6 +24,8 @@ class RegisterController extends Controller
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
+        
+        $validatedData['email_verified_at'] = Carbon::now();
         
         User::create($validatedData);
 
