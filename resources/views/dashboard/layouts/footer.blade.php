@@ -52,9 +52,9 @@
     <center>
         <div class="row">
             <div class="col-12 col-md">
-                <img class="mb-2" src="assets/img/artikelku.png" alt="" width="25" height="30">
+                {{-- <img class="mb-2" src="assets/img/artikelku.png" alt="" width="25" height="30"> --}}
                 ArtikelKu
-                <small class="d-block mb-3 text-body-secondary">&copy; 2024</small>
+                <small class="d-block mt-2 mb-2 text-body-secondary">&copy; 2024</small>
                 <div class="credits">
                     Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> oleh <a href="#">Kelompok
                         Rangga Saputra</a>
