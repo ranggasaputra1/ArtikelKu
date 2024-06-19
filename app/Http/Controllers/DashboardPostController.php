@@ -63,7 +63,7 @@ class DashboardPostController extends Controller
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
-        return redirect('/dashboard/posts')->with('success', 'Postingan Artikel baru Berhasil Ditambahkan!');
+        return redirect('/dashboard/posts')->with('success', ' Postingan Artikel baru Berhasil Ditambahkan!');
     }
 
     /**
@@ -130,7 +130,7 @@ class DashboardPostController extends Controller
   
           Post::where('id', $post->id)
                 ->update($validatedData);
-          return redirect('/dashboard/posts')->with('success', 'Postingan Artikel Berhasil di Perbarui!');
+          return redirect('/dashboard/posts')->with('success', ' Postingan Artikel Berhasil di Perbarui!');
     }
 
     /**
@@ -147,7 +147,7 @@ class DashboardPostController extends Controller
         }
 
         Post::destroy($post->id); //menghapus data berdasarkan post by id
-        return redirect('/dashboard/posts')->with('success', 'Postingan Artikel Berhasil di Hapus!');
+        return redirect('/dashboard/posts')->with('success', ' Postingan Artikel Berhasil di Hapus!');
     }
 
     public function checkSlug(Request $request) //fungsi untuk mengambil otomatis slug dari tittle
