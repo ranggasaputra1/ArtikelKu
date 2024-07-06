@@ -31,9 +31,10 @@
                 <div class="col-md-8">
                     <h2 class="mb-3">{{ $post->tittle }}</h2>
 
-                    <p>Artikel dibuat oleh <a href="/posts?author={{ $post->author->username }}"
-                            class="text-decoration-none">{{ $post->author->name }}</a> dari Kategori <a
-                            href="/posts?category={{ $post->category->slug }}"
+                    <p>Artikel dibuat oleh <a href="/posts?author={{ $post->author->name }}"
+                            class="text-decoration-none">{{ $post->author->name }} </a>
+                        ({{ $post->author->email }}) dari
+                        Kategori <a href="/posts?category={{ $post->category->slug }}"
                             class="text-decoration-none">{{ $post->category->name }}</a></p>
 
                     {{-- Dibawah ini adalah kondisi ketika gambar ada dan juga tidak ada --}}

@@ -44,7 +44,7 @@
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Are you sure want to delete this category?')">
+                                    onclick="return confirm('Apakah anda yakin ingin Menghapus Kategori ini?')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                                         class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path
