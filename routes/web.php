@@ -89,6 +89,9 @@ Route::resource('dashboard/posts', DashboardPostController::class)->middleware('
 // Route for admin category
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
+// Route untuk menampung request dari slug
+Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
+
 //Route For Login With Google
 Route::get('/auth/google', [GoogleController::class , 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [GoogleController::class , 'handleGoogleCallback']);

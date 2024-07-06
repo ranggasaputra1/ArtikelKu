@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminCategoryController extends Controller
 {
@@ -26,7 +27,9 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.categories.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -37,8 +40,16 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi data untuk form dashboard kategori
+        $validatedData = $request->validate([
+            'name'=> 'required|max:255',
+            'slug' => 'required|unique:categories',
+        ]);
+
+        Category::create($validatedData);
+        return redirect('/dashboard/categories')->with('success', ' Kategori Artikel baru Berhasil Ditambahkan!');
     }
+    
 
     /**
      * Display the specified resource.
@@ -82,6 +93,14 @@ class AdminCategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        Category::destroy($category->id); //menghapus data berdasarkan Category by id
+        return redirect('/dashboard/categories')->with('success', ' Kategori Artikel Berhasil di Hapus!');
+    }
+
+    public function checkSlug(Request $request) //fungsi untuk mengambil otomatis slug dari name
+    {
+
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
     }
 }
