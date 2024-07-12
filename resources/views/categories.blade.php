@@ -74,7 +74,8 @@
             AOS.init();
         </script>
 
-
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
 
         {{-- End Body --}}
     @endsection
