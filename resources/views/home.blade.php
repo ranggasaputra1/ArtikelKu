@@ -3,6 +3,8 @@
 @section('container')
     {{-- Body --}}
 
+
+
     <body class="index-page">
         <main class="main">
             <!-- Hero Section -->
@@ -11,10 +13,10 @@
                     <div class="row gy-4">
                         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                             <h1 data-aos="fade-up">
-                                "Menginspirasi Lewat Tulisan"
+                                "Sederhanakan Stok Anda, Maksimalkan Efisiensi Anda."
                             </h1>
                             <p data-aos="fade-up" data-aos-delay="100">
-                                Berkarya dengan Kata, Mengubah Ide Menjadi Artikel Pengetahuan.
+                                Aplikasi Sistem Inventaris Management
                             </p>
                             <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
                                 <a href="/login" class="btn-get-started">Mulai Disini <i class="bi bi-arrow-right"></i></a>
@@ -28,46 +30,13 @@
             </section>
             <!-- /Hero Section -->
 
-            <!-- About Section -->
-            <section id="tentang-kami" class="about section">
-                <div class="container" data-aos="fade-up">
-                    <div class="row gx-0">
-                        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up"
-                            data-aos-delay="200">
-                            <div class="content">
-                                <h3>ArtikelKu</h3>
-                                <h2>
-                                    Website penyedia layanan Penulisan Artikel dan Kaya Ilmiah, dimana semua orang bisa
-                                    Meng-Ekspresikan bakat nya di website ini
-                                </h2>
-                                <p>
-                                    inovatif, profesional, interaktif, informatif, inspiratif, dinamis, terpercaya,
-                                    edukatif, menarik, dan Efisien.
-                                </p>
-                                <div class="text-center text-lg-start">
-                                    <a href="/posts"
-                                        class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                                        <span>Lihat Artikel</span>
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                            <img src="assets/img/about.jpg" class="img-fluid" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- /About Section -->
 
             <!-- Values Section -->
             <section id="values" class="values section">
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
                     <h2>Kelebihan Kami</h2>
-                    <p>Apa yang paling kami Hargai<br /></p>
+                    <p>Apa yang Kami Sediakan<br /></p>
                 </div>
                 <!-- End Section Title -->
 
@@ -76,9 +45,9 @@
                         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="card">
                                 <img src="assets/img/values-1.png" class="img-fluid" alt="" />
-                                <h3>Bebas Untuk Mengekspresikan bakat melalui tulisan</h3>
+                                <h3>Sistem Manajemen Penyimanan</h3>
                                 <p>
-                                    Setiap orang dapat melakukan postingan sesuai dengan bakatnya.
+                                    Mengelola Manajemen penyimpanan dengan Mudah dan aman.
                                 </p>
                             </div>
                         </div>
@@ -87,9 +56,10 @@
                         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                             <div class="card">
                                 <img src="assets/img/values-2.png" class="img-fluid" alt="" />
-                                <h3>Menaikan Personal Branding</h3>
+                                <h3>Kemudahan Akses</h3>
                                 <p>
-                                    Dengan sering nya membuat artikel maka semakin banyak orang yang akan mengikuti Anda.
+                                    Sederhanakan tugas, tingkatkan produktivitas, dan jaga operasional Anda berjalan lancar
+                                    hanya dengan beberapa klik.
                                 </p>
                             </div>
                         </div>
@@ -98,10 +68,9 @@
                         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                             <div class="card">
                                 <img src="assets/img/values-3.png" class="img-fluid" alt="" />
-                                <h3>Efisien dan Mudah di akses</h3>
+                                <h3>Efisiensi Waktu</h3>
                                 <p>
-                                    Cukup dengan login dan membuat artikel yang menarik, maka Dunia akan mengetahui Bakat
-                                    Anda.
+                                    Cukup dengan login maka semua operasional manajemen anda dapat dilakukan secara digital.
                                 </p>
                             </div>
                         </div>
@@ -157,7 +126,7 @@
                                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                                     <div class="feature-box d-flex align-items-center">
                                         <i class="bi bi-check"></i>
-                                        <h3>informatif</h3>
+                                        <h3>Aman</h3>
                                     </div>
                                 </div>
                                 <!-- End Feature Item -->
@@ -192,17 +161,17 @@
 
             <div class="container footer-top">
                 <div class="row gy-4">
+
+
+                    <div class="col-lg-2 col-md-6 footer-about">
+                    </div>
+
                     <div class="col-lg-4 col-md-6 footer-about">
-                        <a href="index.html" class="d-flex align-items-center">
-                            <span class="sitename">Artikelku</span>
+                        <a href="/" class="d-flex align-items-center">
+                            <span class="sitename">MyIventory</span>
                         </a>
                         <div class="footer-contact pt-3">
-                            <p>Kelompok</p>
-                            <p>Bandung</p>
-                            <p class="mt-3">
-                                <strong>Telepon:</strong> <span>+62 1234 5678 9</span>
-                            </p>
-                            <p><strong>Email:</strong> <span>info@example.com</span></p>
+                            <p>Aplikasi Manajemen Inventaris</p>
                         </div>
                     </div>
 
@@ -214,7 +183,7 @@
                                 <i class="bi bi-chevron-right"></i> <a href="/about#tentang-kami">Tentang Kami</a>
                             </li>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="/fitur#fitur">Fitur</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/login">login</a>
                             </li>
                         </ul>
                     </div>
@@ -223,47 +192,28 @@
                         <h4>Pelayanan Kami</h4>
                         <ul>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="/">Membuat Artikel</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/">Membuat data Manajemen
+                                    Inventaris</a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="/">Platfrom untuk menulis di internet</a>
+                                <a href="/">Simpan data Penyimnaan dengan aman</a>
                             </li>
                             <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="/">Menambah literasi</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i> <a href="/">Mendapatkan Ide-Ide Baru</a>
+                                <i class="bi bi-chevron-right"></i> <a href="/">Kemudahan akses</a>
                             </li>
                         </ul>
                     </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-12">
-                        <h4>
-                            Ikuti kami</h4>
-                        <p>
-                            Berita Terbaru seputar ArtikelKu akan selalu di Share di Social Media Berikut
-                        </p>
-                        <div class="social-links d-flex">
-                            <a href="#"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
+                <div class="container copyright text-center mt-4">
+                    <p>
+                        <strong class="px-1 sitename">MyIventory</strong>
+                    </p>
+                    <div class="credits">
+                        ©Copyright MyIventory 2024
                     </div>
                 </div>
-            </div>
-
-            <div class="container copyright text-center mt-4">
-                <p>
-                    <strong class="px-1 sitename">ArtikelKu</strong>
-                </p>
-                <div class="credits">
-                    Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> oleh <a href="#">Kelompok Rangga
-                        Saputra</a>
-                </div>
-            </div>
         </footer>
 
         <!-- Scroll Top -->

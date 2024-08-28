@@ -1,209 +1,171 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <script src="bootstrap/js/color-modes.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyInventory | {{ $tittle }}</title>
+    <link rel="icon" href="{{ asset('assets/template/assets_db/img/kaiadmin/favicon.ico') }}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>ArtikelKu | Dashboard</title>
+    <!-- Fonts and icons -->
+    <script src="{{ asset('assets/template/assets_db/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ["Public Sans:300,400,500,600,700"]
+            },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["{{ asset('assets/template/assets_db/css/fonts.min.css') }}"],
+            },
+            active: function() {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
 
-    {{-- Css Online --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ asset('assets/template/assets_db/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/template/assets_db/css/plugins.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/template/assets_db/css/kaiadmin.min.css') }}" />
 
-    {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
-    {{-- End Favicon --}}
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="{{ asset('assets/template/assets_db/css/demo.css') }}" />
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/pricing/">
-
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    {{-- Aos --}}
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-    {{-- Trix Editor --}}
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
-    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
-
-    {{-- Menghilangkan input file di trix editor --}}
+    <!-- Custom Styles -->
     <style>
-        trix-toolbar [data-trix-button-group = "file-tools"] {
-            display: none;
-        }
-    </style>
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
+        .card {
+            margin-bottom: 20px;
         }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        .card-body {
+            font-size: 1.2rem;
         }
 
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
+        .dashboard-welcome {
             text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
+            margin-bottom: 30px;
         }
 
-        .btn-bd-primary {
-            --bd-violet-bg: #712cf9;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-            --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #6528e0;
-            --bs-btn-hover-border-color: #6528e0;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #5a23c8;
-            --bs-btn-active-border-color: #5a23c8;
+        .welcome-text {
+            font-size: 2rem;
+            font-weight: bold;
         }
 
-        .bd-mode-toggle {
-            z-index: 1500;
+        .welcome-subtext {
+            font-size: 1.2rem;
+            color: #6c757d;
         }
 
-        .bd-mode-toggle .dropdown-menu .active .bi {
-            display: block !important;
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: inherit;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-        }
-
-        .nav-link button {
-            background: none;
-            border: none;
-            color: inherit;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .stats-card {
             cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .nav-link button:hover {
-            color: #007bff;
+        .stats-card:hover {
+            transform: scale(1.05);
+        }
+
+        .recent-activity-img {
+            width: 100%;
+            border-radius: 10px;
         }
     </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="bootstrap/css/pricing.css" rel="stylesheet">
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="check2" viewBox="0 0 16 16">
-            <path
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-        </symbol>
-        <symbol id="circle-half" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-        </symbol>
-        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-            <path
-                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-            <path
-                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-        </symbol>
-        <symbol id="sun-fill" viewBox="0 0 16 16">
-            <path
-                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-        </symbol>
-    </svg>
+    <div class="wrapper">
+        @include('dashboard.layouts.sidebar')
 
 
+        @include('dashboard.layouts.header')
+
+        @yield('container')
+
+        <!-- JS Files -->
+        <script src="{{ asset('assets/template/assets_db/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/template/assets_db/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/template/assets_db/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+        <script src="{{ asset('assets/template/assets_db/js/kaiadmin.min.js') }}"></script>
+        <script src="{{ asset('assets/template/assets_db/js/ready.min.js') }}"></script>
 
 
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="check" viewBox="0 0 16 16">
-            <title>Check</title>
-            <path
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-        </symbol>
-    </svg>
+        </script>
+        <!--   Core JS Files   -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/core/jquery-3.7.1.min.js"></script>
+        <script src="<?= asset('assets/template/assets_db') ?>/js/core/popper.min.js"></script>
+        <script src="<?= asset('assets/template/assets_db') ?>/js/core/bootstrap.min.js"></script>
 
-    <div class="container py-4">
+        <!-- jQuery Scrollbar -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
-        @include('dashboard.layouts.navbar')
+        <!-- Chart JS -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/chart.js/chart.min.js"></script>
 
+        <!-- jQuery Sparkline -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
-        <div class="container-fluid">
-            <div class="row">
-                <main class="">
-                    @yield('container')
-                </main>
-            </div>
-        </div> <br><br>
-        @include('dashboard.layouts.footer')
-    </div>
-    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Chart Circle -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/chart-circle/circles.min.js"></script>
 
-    {{-- Aos --}}
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+        <!-- Datatables -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/datatables/datatables.min.js"></script>
 
+        <!-- Bootstrap Notify -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+        <!-- jQuery Vector Maps -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/jsvectormap/world.js"></script>
+
+        <!-- Sweet Alert -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+        <!-- Kaiadmin JS -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/kaiadmin.min.js"></script>
+
+        <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+        <script src="<?= asset('assets/template/assets_db') ?>/js/setting-demo.js"></script>
+        <script src="<?= asset('assets/template/assets_db') ?>/js/demo.js"></script>
+        <script>
+            $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+                type: "line",
+                height: "70",
+                width: "100%",
+                lineWidth: "2",
+                lineColor: "#177dff",
+                fillColor: "rgba(23, 125, 255, 0.14)",
+            });
+
+            $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+                type: "line",
+                height: "70",
+                width: "100%",
+                lineWidth: "2",
+                lineColor: "#f3545d",
+                fillColor: "rgba(243, 84, 93, .14)",
+            });
+
+            $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+                type: "line",
+                height: "70",
+                width: "100%",
+                lineWidth: "2",
+                lineColor: "#ffa534",
+                fillColor: "rgba(255, 165, 52, .14)",
+            });
+        </script>
 </body>
 
 </html>

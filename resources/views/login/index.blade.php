@@ -56,8 +56,6 @@
 
                         <button class="btn btn-primary w-100 py-2 mb-2" type="submit">Login</button>
                     </form>
-                    <small class="d-block text-center mt-3">Belum Punya Akun? <a href="/register"> Daftar
-                            Sekarang</a></small>
                 </main>
             </div>
         </div>

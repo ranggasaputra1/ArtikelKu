@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>ArtikelKu | {{ $tittle }}</title>
+    <title>MyInventory | {{ $tittle }}</title>
 
 
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
     {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="icon" href="{{ asset('assets/template/assets_db/img/kaiadmin/favicon.ico') }}" type="image/x-icon" />
     {{-- End Favicon --}}
 
     <!-- Fonts -->
